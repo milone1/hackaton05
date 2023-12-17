@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextField from "@mui/material/TextField";
+---
+
+<Layout title="Creacion de usuarios">
+  <main class="w-full h-screen grid place-items-center py-4">
+    <div class="w-[350px] bg-white rounded-2xl grid place-items-center py-6 gap-4">
+      <TextField
+        id="standard-basic"
+        label="Ingrese name:"
+        variant="standard"
+        client:only="react"
+      />
+
+      <TextField
+        id="standard-basic"
+        label="Ingrese years:"
+        variant="standard"
+        client:only="react"
+      />
+
+      <TextField
+        id="standard-basic"
+        label="Ingrese especialidad:"
+        variant="standard"
+        client:only="react"
+      />
+
+      <TextField
+        id="standard-basic"
+        label="Ingrese img:"
+        variant="standard"
+        client:only="react"
+      />
+
+      <button
+      class="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-center"
+      >Crear
+
+      </button>
+
+    </div>
+  </main>
+</Layout>
