@@ -1,0 +1,39 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="w-full h-screen grid place-items-center">
+    <div class="text-white uppercase font-medium text-2xl text-center">
+      <h1>
+        Seleccione el tecnico <span class="block"></span> a asignar reparacion.
+      </h1>
+    </div>
+
+    <div
+      class="grid place-items-center items-center justify-center w-full gap-4"
+    >
+      <Card
+        name="Pedro Tito"
+        type="Ios"
+        years={3}
+        img="https://images.pexels.com/photos/14983798/pexels-photo-14983798/free-photo-of-a-man-with-curly-hair-leaning-against-a-wall.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
+
+      <Card
+      name="Mario Pirlo"
+      type="Android"
+      years={5}
+      img="https://images.pexels.com/photos/2883029/pexels-photo-2883029.jpeg?auto=compress&cs=tinysrgb&w=600"
+    />
+
+    <Card
+    name="Juan Toribio"
+    type="Xiami"
+    years={7}
+    img="https://images.pexels.com/photos/9422880/pexels-photo-9422880.jpeg?auto=compress&cs=tinysrgb&w=600"
+  />
+    </div>
+  </main>
+</Layout>
