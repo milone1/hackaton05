@@ -1,7 +1,9 @@
 ---
 import Card from "../components/Card.astro";
 import CardTecnico from "../components/CardTecnico";
+import LIstTecnicos from "../components/LIstTecnicos";
 import Layout from "../layouts/Layout.astro";
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,29 +14,6 @@ import Layout from "../layouts/Layout.astro";
       </h1>
     </div>
 
-    <div
-      class="grid place-items-center items-center justify-center w-full gap-4"
-    >
-      <CardTecnico
-        name={"Juana del Arco"}
-        img={"https://images.pexels.com/photos/3183176/pexels-photo-3183176.jpeg?auto=compress&cs=tinysrgb&w=600"}
-        years={4}
-        client:only="react"
-      />
-
-      <CardTecnico
-        name={"Pedro Morales"}
-        img={"https://images.pexels.com/photos/3175977/pexels-photo-3175977.jpeg?auto=compress&cs=tinysrgb&w=600"}
-        years={4}
-        client:only="react"
-      />
-
-      <CardTecnico
-        name={"Pepe Francisco"}
-        img={"https://images.pexels.com/photos/8088435/pexels-photo-8088435.jpeg?auto=compress&cs=tinysrgb&w=600"}
-        years={4}
-        client:only="react"
-      />
-    </div>
+    <LIstTecnicos client:only="react" />
   </main>
 </Layout>
