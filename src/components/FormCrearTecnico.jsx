@@ -20,7 +20,6 @@ const FormCrearTecnico = () => {
     list.push(values)
     localStorage.setItem("tecnicos", JSON.stringify(list));
     alert('Creado correctamente.')
-
   }
   
 

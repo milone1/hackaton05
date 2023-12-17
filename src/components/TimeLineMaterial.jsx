@@ -7,49 +7,38 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
-export default function OppositeContentTimeline() {
-  return (
-    <Timeline position="alternate">
-      <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          09:30 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot color="success" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Eat</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          10:00 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Code</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          12:00 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot color="error" />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Sleep</TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          9:00 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>Repeat</TimelineContent>
-      </TimelineItem>
-    </Timeline>
+export default function OppositeContentTimeline({ reparacion }) {
+
+  // console.log(reparacion)
+  // reparacion.hora =  9:30
+  const date = new Date()
+
+  const hora = date.getHours()
+  const minutes = date.getMinutes()
+
+  // console.log(reparacion)
+
+  React.useEffect(() => {
+    
+    reparacion.forEach((element) => {
+      element.terminated = element.hora == hora && (element.minutes - minutes === 0 )  ? true : false
+    });
+
+  }, [])
+  return (   
+      <Timeline position="alternate">
+        {reparacion.map((element, index) => (
+          <TimelineItem key={index}>
+            <TimelineOppositeContent color="text.secondary">
+              {element.hora} am
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot color={!element.terminated ? 'success': 'error'} />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>{element.cambio}</TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
   );
 }

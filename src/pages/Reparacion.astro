@@ -1,15 +1,9 @@
 ---
-import CardReparacion from "../components/CardReparacion.astro";
+import ControlReparacion from "../components/ControlReparacion";
 import Layout from "../layouts/Layout.astro";
+
 ---
 
 <Layout title="Reparacion">
-  <main class="flex flex-col items-center justify-center h-auto gap-4">
-
-    <CardReparacion type="Pantalla" terminated={true}/>
-
-    <CardReparacion type="Sistema" terminated={true}/>
-
-    <CardReparacion type="Case" terminated={false}/>
-  </main>
+  <ControlReparacion client:only="react" />
 </Layout>
