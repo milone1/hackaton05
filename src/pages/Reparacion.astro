@@ -1,22 +1,10 @@
 ---
 import CardReparacion from "../components/CardReparacion.astro";
 import Layout from "../layouts/Layout.astro";
-import Tecnicos from "./Tecnicos.astro";
-import User from "./User.astro";
 ---
 
 <Layout title="Reparacion">
   <main class="flex flex-col items-center justify-center h-auto gap-4">
-
-    <!-- <div class="w-[400px] h-auto bg-white rounded-2xl py-[20px] px-[20px]">
-      <div class="w-full text-white grid place-items-center">
-        <div class="w-[32px] h-[32px] bg-green-300 rounded-full"></div>
-        <h1>Reparacion de pantallas</h1>
-      </div>
-      <div class="w-full min-h-[550px]">
-        <p>El estado de la pantalla esta a un 40% termninado</p>
-      </div>
-    </div> -->
 
     <CardReparacion type="Pantalla" terminated={true}/>
 
