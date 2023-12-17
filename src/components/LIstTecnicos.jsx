@@ -10,14 +10,15 @@ const LIstTecnicos = () => {
     <div
       className="grid place-items-center items-center justify-center w-full gap-4"
     >
-      {list.map((element) => (
+      {list.map((element, index) => (
         <CardTecnico
+          key={index}
           name={element.name}
           img={element.img_path}
           years={element.years}
           client:only="react"
         />
-      )) }
+      ))}
     </div>
   )
 }
