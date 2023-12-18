@@ -6,9 +6,9 @@ const ControlReparacion = () => {
 
   const [phone, setPhone] = useState(JSON.parse(localStorage.getItem('phone')) || [])
 
-
-  const [objeto, setObjeto] = useState(list.find(elemento => elemento.IMEI == phone.imei))
-
+  //busca en la lista de celulares el telefono que se ingreso
+  const [objeto, setObjeto] = useState(list.find(elemento => elemento.IMEI == phone.imei) || {})
+  console.log(list);
   const reparacionPantalla = [
     {
       cambio: "Cambio de pantalla",

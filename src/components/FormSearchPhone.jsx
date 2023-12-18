@@ -5,7 +5,7 @@ const FormSearchPhone = () => {
 
   const [values, setValues] = useState({})
 
-  const hanldeChangue = (event) => {
+  const handleChangue = (event) => {
     event.preventDefault()
 
     const {name, value} = event.target
@@ -23,14 +23,14 @@ const FormSearchPhone = () => {
     >
       <div className="grid place-items-center gap-4">
         <TextField
-          onChange={hanldeChangue}
+          onChange={handleChangue}
           name="phone"
           label="Ingrese numero:"
           variant="standard"
           client:only="react"
         />
         <TextField
-          onChange={hanldeChangue}
+          onChange={handleChangue}
           name='imei'
           label="Ingrese IMEI:"
           variant="standard"
@@ -39,7 +39,7 @@ const FormSearchPhone = () => {
       </div>
       <a
         onClick={handleSave}
-        href="/reparacion"
+        href="/Reparacion"
         className="bg-gray-700 flex flex-row py-4 px-4 w-[200px] rounded-2xl text-white uppercase font-medium shadow-2xl hover:bg-slate-500 hover:text-white justify-between"
       >Ingresar
 
